@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+.calculator
+{
+    background: #1e1c20;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.calculator__container {
+    display: grid;
+    grid-template-columns: repeat(4 , 4rem);
+    grid-template-rows: repeat(7 , minmax(4rem , auto));
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 0.5rem;
+    gap: 0.3rem 0.3rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.calculator__output
+{
+    grid-column: span 4;
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-evenly;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.calculator__output p:first-child
+{
+    color: var(--color-text);
+    font-size: 1.2rem;    
+    word-break: break-all;
+}
+.calculator__output p:last-child
+{
+    font-size: 2rem;
+    word-break: break-all;
+}
+.calculator__container > button
+{
+    background: var(--bg-secondary);
+    transition: all 0.3s;
+    border-radius: 10px;
+    border: solid 1px transparent;
+    outline: none;
+    color: var(--color-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.calculator__container > button:hover,
+.calculator__container > button:active
+{
+    background: rgb(18, 22, 26) !important;
+    border: solid 1px var(--bg-violet);
 }
 
-.App-link {
-  color: #61dafb;
+.text--orange
+{
+    color: var(--color-subtext);
+}
+.span--btn
+{
+    grid-column: span 2;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bg--red
+{
+    background-color: #2D181D !important;
+    color: #bd6477 !important;
+}
+.bg--violet
+{
+    background-color: var(--bg-violet) !important;
+}
+
+.bg--faint-red
+{
+    background-color: #AD081B !important;
 }
